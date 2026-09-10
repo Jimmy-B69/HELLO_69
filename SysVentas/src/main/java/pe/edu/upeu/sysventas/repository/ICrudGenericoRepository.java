@@ -1,4 +1,4 @@
 package pe.edu.upeu.sysventas.repository;
 
-public interface ICrudGenericoRepository {
+public interface ICrudGenericoRepository <T,id{
 }
