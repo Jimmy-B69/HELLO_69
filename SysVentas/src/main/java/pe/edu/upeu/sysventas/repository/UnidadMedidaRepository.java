@@ -1,5 +1,6 @@
 package pe.edu.upeu.sysventas.repository;
 
+import pe.edu.upeu.sysventas.model.Marca;
 import pe.edu.upeu.sysventas.model.UnidMedida;
 import pe.edu.upeu.sysventas.repository.AbstractJpaRepository;
 
@@ -17,7 +18,15 @@ public class UnidadMedidaRepository extends AbstractJpaRepository<UnidMedida, Lo
     }
 
     @Override
-    protected Long generateId() {
-        return sequence++;
+    protected Long generateId() {return sequence++;}
+    public void seedData() {
+
+    if (findAll().isEmpty()) {
+        save(new UnidMedida(generateId(), "Samsung"));
+        save(new UnidMedida(generateId(),"LG"));
+        save(new UnidMedida(generateId(),"Sony"));
+        save(new UnidMedida(generateId(),"HP"));
+        save(new UnidMedida(generateId(),"Lenovo"));
     }
+}
 }
