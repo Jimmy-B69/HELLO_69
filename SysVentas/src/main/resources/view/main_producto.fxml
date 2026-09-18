@@ -59,7 +59,7 @@
                               <TextField fx:id="txtNombreProducto" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="2" />
                               <Label text="P. Unit" GridPane.rowIndex="3" />
                               <TextField fx:id="txtPUnit" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Label fx:id="txtPUnitOld" alignment="CENTER" maxWidth="1.7976931348623157E308" text="P. Unit Old" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" text="P. Unit Old" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                               <TextField fx:id="txtPUnitOld" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                               <Label text="Utilidad" GridPane.rowIndex="4" />
                               <TextField fx:id="txtUtilidad" GridPane.columnIndex="1" GridPane.rowIndex="4" />
@@ -73,7 +73,7 @@
                               <Label text="Unidad Medida" GridPane.rowIndex="8" />
                               <ComboBox fx:id="cbxCategoria" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="7" />
                               <ComboBox fx:id="cbxUnidMedida" maxWidth="1.7976931348623157E308" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="8" />
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Guardar" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onGuardar" text="Guardar" GridPane.columnIndex="1" GridPane.rowIndex="9">
                                  <GridPane.margin>
                                     <Insets right="5.0" />
                                  </GridPane.margin></Button>
@@ -91,12 +91,7 @@
                   </AnchorPane>
                   <AnchorPane>
                      <children>
-                        <TableView fx:id="TableView" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
-                          <columns>
-                            <TableColumn prefWidth="75.0" text="C1" />
-                            <TableColumn prefWidth="75.0" text="C2" />
-                          </columns>
-                        </TableView>
+                        <TableView fx:id="tableView" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
                      </children></AnchorPane>
                </children>
             </HBox>

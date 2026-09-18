@@ -1,6 +1,10 @@
 package pe.edu.upeu.sysventas.repository;
 
+import pe.edu.upeu.sysventas.enums.TipoProducto;
+import pe.edu.upeu.sysventas.model.Categoria;
+import pe.edu.upeu.sysventas.model.Marca;
 import pe.edu.upeu.sysventas.model.Producto;
+import pe.edu.upeu.sysventas.model.UnidMedida;
 import pe.edu.upeu.sysventas.repository.AbstractJpaRepository;
 
 public class ProductoRepository extends AbstractJpaRepository<Producto, Long>{
@@ -18,5 +22,24 @@ public class ProductoRepository extends AbstractJpaRepository<Producto, Long>{
     @Override
     protected Long generateId() {
         return sequence++;
+    }
+
+    public void seedData() {
+        if (findAll().isEmpty()) {
+            //PRIMER METODO
+            Categoria c=new Categoria();
+            c.setIdCategoria(1L);
+
+            //SEGUNDO METODO
+            Marca m=Marca.builder().idMarca(1L).build();
+
+            UnidMedida u=new UnidMedida();
+            u.setIdUnidad(1L);
+
+            save(new Producto(generateId(), "CELULAR", TipoProducto.PRODUCTO,
+                    1400.00, 0.0, 200.0, 12.0,0.0,c,m,u
+                    ));
+
+        }
     }
 }

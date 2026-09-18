@@ -19,14 +19,12 @@ public class UnidadMedidaRepository extends AbstractJpaRepository<UnidMedida, Lo
 
     @Override
     protected Long generateId() {return sequence++;}
-    public void seedData() {
 
+    public void seedData() {
     if (findAll().isEmpty()) {
-        save(new UnidMedida(generateId(), "Samsung"));
-        save(new UnidMedida(generateId(),"LG"));
-        save(new UnidMedida(generateId(),"Sony"));
-        save(new UnidMedida(generateId(),"HP"));
-        save(new UnidMedida(generateId(),"Lenovo"));
+        save(new UnidMedida(generateId(), "unidades"));
+        save(new UnidMedida(generateId(),"kilos"));
+        save(new UnidMedida(generateId(),"litros"));
     }
-}
+  }
 }
